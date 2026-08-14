@@ -1,0 +1,124 @@
+/* Full-bleed band, same pattern as the Footer: the section spans
+   edge-to-edge, the .container inside still caps at --max-width. */
+.portfolio-hero {
+  padding-top: clamp(3rem, 7vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--ink-raised);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.filter-pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: transparent;
+  color: var(--text-dim);
+  transition: all 0.2s var(--ease);
+}
+
+.filter-pill:hover {
+  color: var(--text);
+  border-color: var(--teal);
+}
+
+.filter-pill.is-active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #073b34;
+}
+
+.portfolio-grid-section {
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.project-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: 1.9rem;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+  border-top: 3px solid transparent;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-card.petal-cyan {
+  border-top-color: var(--cyan);
+}
+
+.project-card.petal-teal {
+  border-top-color: var(--teal);
+}
+
+.project-card.petal-blue {
+  border-top-color: var(--blue);
+}
+
+.project-card.petal-pale {
+  border-top-color: var(--pale);
+}
+
+.project-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-faint);
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.project-card>p {
+  font-size: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tags li {
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  border: 1px solid var(--panel-border);
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+}
+
+@media (min-width: 640px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

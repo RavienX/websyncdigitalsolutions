@@ -1,0 +1,124 @@
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  min-height: 220px;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  pointer-events: none;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--panel-border);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card.petal-cyan::before { background: radial-gradient(120% 100% at 0% 0%, rgba(20,198,218,0.14), transparent 60%); }
+.service-card.petal-teal::before { background: radial-gradient(120% 100% at 0% 0%, rgba(95,230,214,0.14), transparent 60%); }
+.service-card.petal-blue::before { background: radial-gradient(120% 100% at 0% 0%, rgba(46,150,255,0.14), transparent 60%); }
+.service-card.petal-pale::before { background: radial-gradient(120% 100% at 0% 0%, rgba(199,228,245,0.14), transparent 60%); }
+
+.service-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.service-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card-count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  white-space: nowrap;
+  margin-top: 0.3rem;
+}
+
+.service-card-branches {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.3rem 0 0.5rem;
+}
+
+.service-card-branches li {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  padding-left: 0.9rem;
+  position: relative;
+}
+
+.service-card-branches li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--panel-border);
+}
+
+.petal-cyan .service-card-branches li::before { background: var(--cyan); }
+.petal-teal .service-card-branches li::before { background: var(--teal); }
+.petal-blue .service-card-branches li::before { background: var(--blue); }
+
+.petal-cyan .service-card-icon { background: rgba(20,198,218,0.14); color: var(--cyan); }
+.petal-teal .service-card-icon { background: rgba(95,230,214,0.14); color: var(--teal); }
+.petal-blue .service-card-icon { background: rgba(46,150,255,0.14); color: var(--blue); }
+.petal-pale .service-card-icon { background: rgba(199,228,245,0.14); color: var(--pale); }
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.service-card p {
+  font-size: 0.92rem;
+  flex-grow: 1;
+}
+
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 0.4rem;
+}
+
+.petal-cyan .service-card-link { color: var(--cyan); }
+.petal-teal .service-card-link { color: var(--teal); }
+.petal-blue .service-card-link { color: var(--blue); }
+.petal-pale .service-card-link { color: var(--pale); }

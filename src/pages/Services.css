@@ -1,0 +1,195 @@
+/* Full-bleed band, same pattern as the Footer: the section spans
+   edge-to-edge, the .container inside still caps at --max-width. */
+.services-hero {
+  padding-top: clamp(3rem, 7vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--ink-raised);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.service-detail {
+  border-top: 1px solid var(--panel-border);
+  scroll-margin-top: 76px;
+}
+
+/* Alternate rows get a subtle raised background, reusing the same
+   flip already used for is-reversed layout, so the page reads as
+   distinct bands instead of one long unbroken column. */
+.service-detail.is-reversed {
+  background: var(--ink-raised);
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.service-detail-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-detail-icon {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.petal-cyan .service-detail-icon {
+  background: var(--grad-cyan);
+  color: #04262b;
+}
+
+.petal-teal .service-detail-icon {
+  background: var(--grad-teal);
+  color: #073b34;
+}
+
+.petal-blue .service-detail-icon {
+  background: var(--grad-blue);
+  color: #04203f;
+}
+
+.petal-pale .service-detail-icon {
+  background: var(--grad-pale);
+  color: #1c3a4d;
+}
+
+.service-detail-copy h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: var(--text);
+  margin: 0.9rem 0 0.9rem;
+}
+
+.service-detail-copy>p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.service-detail-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.6rem;
+}
+
+.service-detail-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.petal-cyan .service-detail-features li svg {
+  color: var(--cyan);
+}
+
+.petal-teal .service-detail-features li svg {
+  color: var(--teal);
+}
+
+.petal-blue .service-detail-features li svg {
+  color: var(--blue);
+}
+
+.petal-pale .service-detail-features li svg {
+  color: var(--pale);
+}
+
+.services-cta {
+  padding-top: 1rem;
+}
+
+.branch-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.branch-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  scroll-margin-top: 96px;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.branch-card:hover {
+  transform: translateY(-3px);
+}
+
+.branch-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+}
+
+.petal-cyan .branch-card-icon {
+  background: rgba(20, 198, 218, 0.14);
+  color: var(--cyan);
+}
+
+.petal-teal .branch-card-icon {
+  background: rgba(95, 230, 214, 0.14);
+  color: var(--teal);
+}
+
+.petal-blue .branch-card-icon {
+  background: rgba(46, 150, 255, 0.14);
+  color: var(--blue);
+}
+
+.petal-pale .branch-card-icon {
+  background: rgba(199, 228, 245, 0.16);
+  color: var(--pale);
+}
+
+.branch-card h3 {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.branch-card p {
+  font-size: 0.86rem;
+}
+
+@media (min-width: 640px) {
+  .branch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .branch-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 860px) {
+  .service-detail-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+
+  .service-detail.is-reversed .service-detail-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .service-detail.is-reversed .service-detail-visual {
+    order: 2;
+  }
+}

@@ -1,0 +1,199 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 17, 32, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.navbar.is-scrolled {
+  border-bottom-color: var(--panel-border);
+  background: rgba(10, 17, 32, 0.92);
+}
+
+.navbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+/* Groups the links + CTA + toggle together so they sit as one
+   block on the right side of the row, instead of the links
+   floating in the center. */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-links {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  position: relative;
+  padding: 0.4rem 0;
+  transition: color 0.2s var(--ease);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--grad-brand);
+  transition: width 0.25s var(--ease);
+}
+
+.navbar-link:hover {
+  color: var(--text);
+}
+
+.navbar-link:hover::after,
+.navbar-link.is-active::after {
+  width: 100%;
+}
+
+.navbar-link.is-active {
+  color: var(--text);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-cta {
+  display: none;
+}
+
+.navbar-toggle {
+  background: transparent;
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Dark backdrop behind the sliding sidebar */
+.navbar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 16, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+  z-index: 190;
+}
+
+.navbar-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile menu is now a fixed sidebar sliding in from the right,
+   not a dropdown pushing content down. */
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(82vw, 320px);
+  max-height: none;
+  overflow-y: auto;
+  background: rgba(10, 17, 32, 0.98);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-left: 1px solid var(--panel-border);
+  border-top: none;
+  transform: translateX(100%);
+  transition: transform 0.35s var(--ease);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-mobile.is-open {
+  transform: translateX(0);
+}
+
+.navbar-mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem var(--gutter);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.navbar-mobile nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem var(--gutter) 0;
+}
+
+.navbar-mobile-link {
+  padding: 0.9rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.navbar-mobile-link.is-active {
+  color: var(--teal);
+}
+
+.navbar-mobile-cta {
+  margin: 1.1rem var(--gutter) 1.4rem;
+  margin-top: auto;
+}
+
+@media (min-width: 900px) {
+  .navbar-links {
+    display: flex;
+  }
+
+  .navbar-cta {
+    display: inline-flex;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  .navbar-mobile {
+    display: none;
+  }
+
+  .navbar-overlay {
+    display: none;
+  }
+}

@@ -1,0 +1,226 @@
+.hero {
+  padding-top: clamp(3rem, 8vw, 5.5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  margin: 1.1rem 0 1.4rem;
+  color: var(--text);
+}
+
+.hero-lede {
+  font-size: 1.08rem;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.hero-visual-glow {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 198, 218, 0.22) 0%, rgba(46, 150, 255, 0) 70%);
+  filter: blur(10px);
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--panel-border);
+}
+
+.stats-row li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stats-row strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  color: var(--text);
+}
+
+.stats-row span {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+/* Full-bleed band: the section itself spans edge-to-edge, while the
+   .container inside still caps at --max-width. Same pattern used by
+   the Footer, applied here so hero/next section don't look like one
+   giant blank margin. */
+.services-section {
+  background: var(--ink-raised);
+  border-top: 1px solid var(--panel-border);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.process-card {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+}
+
+.process-step {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+.process-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(95, 230, 214, 0.12);
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.process-card h3 {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.process-card p {
+  font-size: 0.9rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.value-card {
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  background: var(--ink-raised);
+  border: 1px solid var(--panel-border);
+}
+
+.value-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(46, 150, 255, 0.12);
+  color: var(--blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.value-card h3 {
+  font-size: 1.08rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  font-size: 0.9rem;
+}
+
+.cta-section {
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.cta-band {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  align-items: flex-start;
+  background: linear-gradient(120deg, rgba(20, 198, 218, 0.12), rgba(46, 150, 255, 0.12));
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 3.25rem);
+}
+
+.cta-band h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.cta-band p {
+  font-size: 1rem;
+}
+
+@media (min-width: 620px) {
+  .stats-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 760px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cta-band {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

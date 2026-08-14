@@ -1,0 +1,38 @@
+.pixora-mark {
+  overflow: visible;
+}
+
+.pixora-mark .petal {
+  transform-origin: 50px 50px;
+}
+
+.pixora-mark .petal-cyan { fill: var(--cyan); }
+.pixora-mark .petal-teal { fill: var(--teal); }
+.pixora-mark .petal-blue { fill: var(--blue); }
+.pixora-mark .petal-pale { fill: var(--pale); }
+
+.pixora-mark.is-animated .petal {
+  animation: petal-settle 0.9s var(--ease) both;
+}
+
+.pixora-mark.is-animated .petal-cyan { animation-delay: 0s; }
+.pixora-mark.is-animated .petal-teal { animation-delay: 0.09s; }
+.pixora-mark.is-animated .petal-blue { animation-delay: 0.18s; }
+.pixora-mark.is-animated .petal-pale { animation-delay: 0.27s; }
+
+@keyframes petal-settle {
+  from {
+    opacity: 0;
+    transform: scale(0.4) rotate(-25deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixora-mark.is-animated .petal {
+    animation: none;
+  }
+}

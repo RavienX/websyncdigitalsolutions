@@ -1,0 +1,36 @@
+:root {
+  /* Color — pulled from the four petals of the Pixora mark */
+  --ink: #0a1120;
+  --ink-raised: #101b30;
+  --panel: #142339;
+  --panel-border: rgba(199, 228, 245, 0.1);
+  --cyan: #14c6da;
+  --teal: #5fe6d6;
+  --blue: #2e96ff;
+  --pale: #c7e4f5;
+  --text: #eef5fa;
+  --text-dim: #93a8bf;
+  --text-faint: #5d7085;
+
+  /* Gradients, one per petal, used sparingly */
+  --grad-cyan: linear-gradient(135deg, #0bb0c2 0%, #14c6da 100%);
+  --grad-teal: linear-gradient(135deg, #45d8c8 0%, #79ecdd 100%);
+  --grad-blue: linear-gradient(135deg, #2286ea 0%, #4facff 100%);
+  --grad-pale: linear-gradient(135deg, #a9d2ec 0%, #d8ecf9 100%);
+  --grad-brand: linear-gradient(120deg, #14c6da 0%, #5fe6d6 33%, #2e96ff 66%, #a9d2ec 100%);
+
+  /* Type */
+  --font-display: 'Sora', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Layout */
+  --max-width: 1320px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
